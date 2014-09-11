@@ -13,3 +13,17 @@ h3 Priorities
         button.btn.btn-success(ng-show='priorityForm.$valid', ng-click='add()') Add Priority
   .col-xs-9
 
+.row
+  .col-xs-3
+    .panel.panel-default
+      .panel-body
+        table.table.table-hover.table-bordered
+          thead
+            tr
+              th Name
+              th Color
+          tbody
+            tr(ng-repeat='p in priorities | orderBy:"name"', ng-style='{"background-color":p.color}')
+              td {{p.name}}
+              td {{p.color}}
+
