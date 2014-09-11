@@ -11,7 +11,7 @@ h3 Tasks
         input.form-control#due(name='due', type='date', ng-model='task.due', required)
       .form-group
         label(for='priorityId') Priority
-        select.form-control(name='priorityId', ng-model='task.priorityId', ng-options='p._id as p.name for p in priorities', required)
+        select.form-control(name='priorityId', ng-model='task.priorityId', ng-options='p._id as p.name for p in priorities | orderBy:"name"', required)
           option(value='') Select Priority
       .form-group
         button.btn.btn-success(ng-show='taskForm.$valid', ng-click='add()') Add Task
